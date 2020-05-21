@@ -4,9 +4,13 @@ module.exports = {
     async store(req, res) {
         const post = await Post.findById(req.params.id)
         post.likes += 1
-        await post.save()
 
-        req.io.emit('like', post)
+        try {
+            await post.save()
+            req.io.emit('like', post)           
+        } catch (error) {
+            console.error(error)
+        }
         return res.json(post)
     }
 }; 
