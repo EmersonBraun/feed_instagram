@@ -13,6 +13,7 @@ class New extends Component {
     };
 
     handleSubmit = async e => {
+        console.log('send');
         e.preventDefault();
 
         const data = new FormData();
@@ -22,9 +23,14 @@ class New extends Component {
         data.append('place', this.state.place);
         data.append('description', this.state.description);
         data.append('hashtags', this.state.hashtags);
-        await api.post('posts', data);
 
-        this.props.history.push('/');
+        try {
+            const post = await api.post('posts', data);
+            console.log('post', post);
+            this.props.history.push('/');
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     handleImageChange = e => {
@@ -37,7 +43,7 @@ class New extends Component {
 
     render() {
         return (
-            <form id="new-post" onSubmit={this.handleSubmit}>
+            <form id="new-post">
                 <input type="file"/>
 
                 <input 
@@ -71,7 +77,7 @@ class New extends Component {
                     onChange={this.handleChange}
                     value={this.state.hashtags}
                 />
-                <button type="submit">Enviar</button>
+                <button type="submit" onClick={this.handleSubmit}>Enviar</button>
             </form>
         );
     }
