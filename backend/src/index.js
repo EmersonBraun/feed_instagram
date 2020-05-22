@@ -7,7 +7,7 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
-mongoose.connect('mongodb+srv://braun:NewApp01@cluster0-1ovtv.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://user:pasword@cluster0-1ovtv.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
