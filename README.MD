@@ -1,16 +1,8 @@
 <h1 align="center">
-      <br> :camera: Pequeno clone do Feed do Instagram<br/>
+      <br> :camera: Instagram Feed Clone <br/>
 </h1>
 
-
-<p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-como-usar">Como Usar</a>
-</p>
-
-## Tecnologias
-
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+## Made with
 
 -  [Node.js](https://nodejs.org/en/)
 -  [Express](https://expressjs.com/)
